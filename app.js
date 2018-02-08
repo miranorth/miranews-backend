@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -10,6 +12,7 @@ mongoose.connect("mongodb://fabio:fabio@ds229648.mlab.com:29648/miranorth")
 
 const user = require('./routes/user');
 const news = require('./routes/news');
+const verify = require('./routes/verify');
 
 app.use(cors())
 app.use(logger('dev'));
@@ -20,6 +23,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/users', user);
 app.use('/news', news);
+app.use('/verify', verify);
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
