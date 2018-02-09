@@ -12,6 +12,9 @@ const userSchema = new Schema({
   },
   country: {
     type: String
+  },
+  facebookId: {
+    type: String
   }
 })
 

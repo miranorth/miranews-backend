@@ -4,11 +4,12 @@ var nexmo = new Nexmo({
     apiKey: process.env.NEXMO_KEY,
     apiSecret: process.env.NEXMO_SECRET
   });
-  
+
 class Verification {
   static reqVer(req,res){
+    console.log(req.body);
     nexmo.verify.request(
-      {number:req.body.number,brand:'Miranews'},(err, response) => {
+      {number:req.body.phone,brand:'Miranews'},(err, response) => {
         if (err) {
           res.status(400)
           .json({
@@ -23,7 +24,7 @@ class Verification {
         }
       });
   }
-  
+
   static verCheck(req,res){
     nexmo.verify.check(
       {request_id:req.body.request_id,code:req.body.code},(err, response) => {
