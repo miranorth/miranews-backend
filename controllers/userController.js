@@ -31,9 +31,10 @@ class UserController {
 
   static signUp (req, res) {
     let objUser = new User ({
-      name    : req.body.name,
-      phone   : req.body.phone,
-      country : req.body.country
+      name       : req.body.name,
+      phone      : req.body.phone,
+      country    : req.body.country,
+      facebookId : req.body.facebookId
     })
 
     objUser.save().then((result) => {
