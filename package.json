@@ -17,6 +17,7 @@
     "get-json": "^1.0.0",
     "mongoose": "^5.0.3",
     "morgan": "~1.9.0",
-    "newsapi": "^2.2.0"
+    "newsapi": "^2.2.0",
+    "nexmo": "^2.2.0"
   }
 }
