@@ -16,7 +16,7 @@ class UserController {
 
   static getSingleUser (req, res) {
     User.findOne({
-      _id: req.params.id
+      facebookId: req.params.id
     }).then((result) => {
       res.status(200).json({
         msg  : 'Data Single User Retrieved',
