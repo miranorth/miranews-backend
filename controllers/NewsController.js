@@ -5,9 +5,8 @@ class NewsController {
 
     static getNews(req, res) {
 
-        let country = 'id';
+        let country = req.query.country;
         newsapi.v2.topHeadlines({
-                language: 'en',
                 country: country
             })
             .then(response => {
@@ -24,12 +23,11 @@ class NewsController {
     }
 
     static searchNews(req, res) {
-        let country = 'id';
-        let q = req.body.q;
+        let country = req.query.country;
+        let q = req.query.q;
 
         newsapi.v2.topHeadlines({
                 q: q,
-                language: 'en',
                 country: country
             })
             .then(response => {
